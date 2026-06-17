@@ -169,9 +169,11 @@ export class ChatView extends ItemView {
             document.body.appendChild(popover);
 
             const rect = kebabMenu.getBoundingClientRect();
-            popover.style.position = "absolute";
-            popover.style.bottom = `${window.innerHeight - rect.top + 8}px`;
-            popover.style.right = `${window.innerWidth - rect.right}px`;
+            popover.setCssStyles({
+                position: "absolute",
+                bottom: `${window.innerHeight - rect.top + 8}px`,
+                right: `${window.innerWidth - rect.right}px`,
+            });
 
             const item1 = popover.createDiv({ cls: "synapse-kebab-item" });
             const icon1 = item1.createDiv({ cls: "synapse-kebab-item__icon" });
@@ -560,7 +562,7 @@ export class ChatView extends ItemView {
 
         const toolbar = msgDiv.querySelector(".synapse-message__toolbar") as HTMLElement | null;
         contentEl.hidden = true;
-        if (toolbar) toolbar.style.display = "none";
+        if (toolbar) toolbar.setCssStyles({ display: "none" });
 
         const editDiv = msgDiv.createDiv({ cls: "synapse-message__edit-container" });
         const editInput = editDiv.createEl("textarea", { cls: "synapse-message__edit-input" });
@@ -573,7 +575,7 @@ export class ChatView extends ItemView {
         cancelbtn.addEventListener("click", () => {
             editDiv.remove();
             contentEl.hidden = false;
-            if (toolbar) toolbar.style.display = "";
+            if (toolbar) toolbar.setCssStyles({ display: "" });
         })
 
         const sendbtn = editToolbar.createEl("button", { cls: "synapse-icon-btn", attr: { "aria-label": t("chat.actions.send") } })
@@ -592,7 +594,7 @@ export class ChatView extends ItemView {
 
             contentEl.innerText = editInput.value;
             contentEl.hidden = false;
-            if (toolbar) toolbar.style.display = "";
+            if (toolbar) toolbar.setCssStyles({ display: "" });
 
             this.setGeneratingState(true);
             try {
