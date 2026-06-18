@@ -1,6 +1,6 @@
 {
 	"name": "synapse-ai",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"description": "Chat with your notes using Gemini, OpenRouter or any OpenAI-compatible model.",
 	"main": "main.js",
 	"type": "module",
