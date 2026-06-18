@@ -1,7 +1,7 @@
 {
 	"id": "synapse-ai",
 	"name": "Synapse AI",
-	"version": "0.5.1",
+	"version": "0.5.2",
 	"minAppVersion": "1.5.0",
 	"description": "Chat with your notes using Gemini, OpenRouter or any OpenAI-compatible model. Bring your own key, vault-aware context, saved replies. Private, local-first.",
 	"author": "Fredrix",
